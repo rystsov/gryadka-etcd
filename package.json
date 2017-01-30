@@ -1,0 +1,29 @@
+{
+  "name": "gryadka-etcd",
+  "version": "1.0.0",
+  "description": "A performance test of Gradka and comparison with Etcd",
+  "main": "index.js",
+  "dependencies": {
+    "express": "4.14.0",
+    "body-parser": "1.15.2",
+    "mustache": "2.3.0",
+    "gryadka": "1.61.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rystsov/gryadka-etcd.git"
+  },
+  "keywords": [
+    "paxos",
+    "redis"
+  ],
+  "author": "Denis Rystsov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rystsov/gryadka-etcd/issues"
+  },
+  "homepage": "https://github.com/gryadka/js-example/blob/master/README.md"
+}

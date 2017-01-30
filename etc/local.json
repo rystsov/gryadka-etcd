@@ -1,0 +1,14 @@
+{
+    "acceptors": { 
+        "a0": { "host": "127.0.0.1", "port": 6379 }
+    },
+    "proposers": {
+        "p0": { 
+            "id": 0,
+            "port": 2379, 
+            "acceptors": ["a0"],
+            "quorum": { "read": 1, "write": 1 },
+            "transient": []
+        }
+    }
+}
