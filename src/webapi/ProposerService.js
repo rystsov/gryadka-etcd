@@ -93,12 +93,14 @@ class ProposerService {
                 if (value.status == "OK") {
                     value = value.details;
                     if (value == null) {
+                        console.info(404);
                         res.status(404).json({
                             "errorCode": 100,
                             "message": "Key not found",
                             "cause": "/" + key
                         });
                     } else {
+                        //console.info(200);
                         res.status(200).json({
                             "action": "get",
                             "node": {
@@ -110,10 +112,11 @@ class ProposerService {
                         });
                     }
                 } else {
+                    console.info(value);
                     throw new Error(value);
                 }
             } catch(e) {
-                //console.info(e);
+                console.info(e);
                 res.sendStatus(500);
             }
         })();
@@ -143,12 +146,14 @@ class ProposerService {
                             }
                         });
                     } else if (status.status == "NO" && status.details.isKeyAlreadyExistsError) {
+                        console.info(412);
                         res.status(412).json({
                             "errorCode": 105,
                             "message": "Key already exists",
                             "cause": "/" + key
                         });
                     } else {
+                        console.info(status);
                         throw new Error();
                     }
                 } else if (req.query.hasOwnProperty("prevIndex")) {
@@ -165,12 +170,14 @@ class ProposerService {
                             }
                         });
                     } else if (status.status == "NO" && status.details.isNullUpdateError) {
+                        console.info(404);
                         res.status(404).json({
                             "errorCode": 100,
                             "message": "Key not found",
                             "cause": "/" + key
                         });
                     } else if (status.status == "NO" && status.details.isCASError) {
+                        console.info(412);
                         res.status(412).json({
                             "errorCode": 101,
                             "message": "Compare failed",
