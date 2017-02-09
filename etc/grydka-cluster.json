@@ -31,19 +31,19 @@
     "proposers": {
         "p1": { 
             "id": 0,
-            "port": 2400, 
+            "port": 2379, 
             "acceptors": ["a1", "a2", "a3"],
             "quorum": { "read": 2, "write": 2 }
         },
         "p2": { 
             "id": 1,
-            "port": 2401, 
+            "port": 2379, 
             "acceptors": ["a1", "a2", "a3"],
             "quorum": { "read": 2, "write": 2 }
         },
         "p3": { 
             "id": 2,
-            "port": 2402, 
+            "port": 2379, 
             "acceptors": ["a1", "a2", "a3"],
             "quorum": { "read": 2, "write": 2 }
         }
