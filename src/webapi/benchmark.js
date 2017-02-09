@@ -4,7 +4,8 @@ const {ReadIncWriteTest} = require("./ReadIncWriteTest");
 
 const args = Object.assign({
     c:1,
-    d:"10s"
+    d:"10s",
+    h: null
 }, minimist(process.argv.slice(2)));
 
 let duration_us = null;
@@ -20,12 +21,11 @@ if (duration_us == null) {
     throw new Error("unknown duration: " + args.d);
 }
 
+if (args.h == null) {
+    throw new Error("user should specify hosts with -h arg");
+}
 
-
-const hostPorts = [
-    "127.0.0.1:2400",
-    "127.0.0.1:2401"
-];
+const hostPorts = args.h.split(",");
 
 const tester = new ReadIncWriteTest(hostPorts, args.c, duration_us, 5 * 1000 * 1000);
 (async () => {
