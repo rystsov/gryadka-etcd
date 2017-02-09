@@ -3,7 +3,7 @@ const mustache = require("mustache");
 
 const template = "etc/redis.mustache";
 
-const settings = JSON.parse(fs.readFileSync("etc/settings.json"));
+const settings = JSON.parse(fs.readFileSync("etc/gryadka-cluster.json"));
 const acceptor = process.argv[2];
 const path = process.argv[3];
 
